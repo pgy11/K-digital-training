@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #27292d;
+            color: #fff;
+        }
+
+        body #app {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id='app'>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th rowspan="8" colspan="2">
+                        <h1>Project List</h1>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        선택
+                    </td>
+
+                    <td>
+                        프로젝트명
+                    </td>
+                </tr>
+                <form>
+                    <tr id=eis>
+                        <td>
+                            <input type='radio' name='rname' id='0' onclick="handleEvent(this.id)">
+                        </td>
+
+                        <td>
+                            전자정보시스템
+                        </td>
+                    </tr>
+
+                    <tr id='lib'>
+                        <td>
+                            <input type='radio' name='rname' id='1' onclick="handleEvent(this.id)">
+                        </td>
+
+                        <td>
+                            도서관리시스템
+                        </td>
+                    </tr>
+
+                    <tr id='iaas'>
+                        <td>
+                            <input type='radio' name='rname' id='2' onclick="handleEvent(this.id)">
+                        </td>
+
+                        <td>
+                            IaaS 서비스
+                        </td>
+                    </tr>
+
+                    <tr id='paas'>
+                        <td>
+                            <input type='radio' name='rname' id='3' onclick="handleEvent(this.id)">
+                        </td>
+
+                        <td>
+                            PaaS 서비스
+                        </td>
+                    </tr>
+
+                    <tr id='saas'>
+                        <td>
+                            <input type='radio' name='rname' id='4' onclick="handleEvent(this.id)">
+                        </td>
+
+                        <td>
+                            SaaS 서비스
+                        </td>
+                    </tr>
+
+                    <tr id='ais'>
+                        <td>
+                            <input type='radio' name='rname' id='5' onclick="handleEvent(this.id)">
+                        </td>
+
+                        <td>
+                            AI보안시스템
+                        </td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+
+        <h3>프로젝트명</h3> <textarea readonly id='pnum_'></textarea>
+        <h3>프로젝트이름</h3> <textarea readonly id='pname_'></textarea>
+        <h3>프로젝트설명</h3> <textarea readonly id='pd_'></textarea>
+    </div>
+    <script>
+        localStorage.setItem(0, JSON.stringify({
+            pno: "p001", pname: "전자인사관리시스템", pdesc: "기업내 인사정보를 관리하는 시스템"
+        }));
+
+        localStorage.setItem(1, JSON.stringify({
+            pno: "p002", pname: "도서관리시스템", pdesc: "기업내 자기개발을 위한 도서대여 시스템"
+        }));
+
+        localStorage.setItem(2, JSON.stringify({
+            pno: "p003", pname: "IaaS 서비스", pdesc: "Infa as a Service"
+        }));
+
+        localStorage.setItem(3, JSON.stringify({
+            pno: "p004", pname: "PaaS 서비스", pdesc: "Platform as a Service"
+        }));
+
+        localStorage.setItem(4, JSON.stringify({
+            pno: "p005", pname: "SaaS", pdesc: "Soft as a Service"
+        }));
+
+        localStorage.setItem(5, JSON.stringify({
+            pno: "p006", pname: "AI보안관리시스템", pdesc: "AI보안관리"
+        }));
+
+        function handleEvent(id) {
+            let key = parseInt(id);
+            let value = JSON.parse(localStorage.getItem(key));
+            
+            document.getElementById('pnum_').innerText = value.pno;
+            document.getElementById('pname_').innerText = value.pname;
+            document.getElementById('pd_').innerText = value.pdesc;
+        }
+
+
+    </script>
+</body>
