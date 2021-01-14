@@ -20,10 +20,10 @@ class TodoController:
 
     def register(self, todo):
         if not is_valid_name(todo.get_name()):
-            msg_display('작성자 입력에 공백을 입력하지 마세요')
+            msg_display('작성자 입력에 공백을 입력하지 마세요\n')
         
         if not is_valid_content(todo.get_content()):
-            msg_display('일정내용 입력에 공백을 입력하지 마세요.')
+            msg_display('일정내용 입력에 공백을 입력하지 마세요.\n')
             return
 
         msg = TodoService.register(todo)
@@ -32,16 +32,22 @@ class TodoController:
 
     def display_all_todos(self):
         todos = TodoService.get_todos()
+
+        if not todos:
+            msg_display('일정목록이 하나도 없습니다.\n')
+            return
+
         list_display(todos)
+        msg_display('조회를 완료하였습니다.\n')
     
 
     def update(self, num, content):
         if not is_valid_num(num):
-            msg_display('유효하지 않는 일정 번호입니다.')
+            msg_display('유효하지 않는 일정 번호입니다.\n')
             return
         
         if not is_valid_content(content):
-            msg_display('유효하지 않는 일정 내용입니다.')
+            msg_display('유효하지 않는 일정 내용입니다.\n')
             return
         
         msg = TodoService.update(num, content)
@@ -50,7 +56,7 @@ class TodoController:
 
     def remove(self, num):
         if not is_valid_num(num):
-            msg_display('유효하지 않는 일정 번호입니다.')
+            msg_display('유효하지 않는 일정 번호입니다.\n')
             return
 
         msg = TodoService.remove(num)
