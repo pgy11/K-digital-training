@@ -1,11 +1,8 @@
 from view.view import menu_display, input_display, input_menu_display, update_input_display
 from view.view import remove_input_display, unvalid_display
 from controller.todo_controller import TodoController
-todos = []
-todo_num = 1
-line = '='*6
 
-NOT_FOUND = -1
+
 REGISTER = '1'
 UPDATE = '2'
 REMOVE = '3'
@@ -13,6 +10,7 @@ DISPLAY = '4'
 REMOVE_ALL = '5' 
 EXIT = '6'
 
+line = '='*6
 controller = TodoController()
 controller.read_file()
 
