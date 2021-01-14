@@ -10,7 +10,7 @@ DISPLAY = '4'
 REMOVE_ALL = '5' 
 EXIT = '6'
 
-line = '='*6
+
 controller = TodoController()
 controller.read_file()
 

@@ -64,19 +64,6 @@ class TodoService:
         return '일정 초기화 완료하였습니다.\n'
 
 
-    # 모든 일정 조회
-    @classmethod
-    def display_all_todos(cls):
-        if get_todos_len() == 0: return '조회할 일정이 하나도 없습니다.\n'
-
-        print(line + ' 일정 목록 ' + line)
-
-        for todo in cls.todos: 
-            print(todo)
-        
-        return '조회을 완료하였습니다\n'
-
-
     # 파일에 있는 일정 불러오기
     @classmethod
     def read_file(cls):
@@ -87,4 +74,10 @@ class TodoService:
     @classmethod
     def write_file(cls):
         save_todos(cls.todos)
+
+
+    @classmethod
+    def get_todos(cls):
+        return cls.todos
+        
         

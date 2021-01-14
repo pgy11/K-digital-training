@@ -46,3 +46,11 @@ def msg_display(msg):
 def unvalid_display():
     print('1 ~ 6사이의 값을 입력하세요.')
 
+# 모든 일정 출력
+def list_display(todos):
+    print(line + ' 일정 목록 ' + line)
+
+    for todo in todos: 
+        print(todo)
+
+

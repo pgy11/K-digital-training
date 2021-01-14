@@ -1,5 +1,5 @@
 from service.todo_service import TodoService
-from view.view import msg_display
+from view.view import msg_display, list_display
 
 DEFAULT_NUM = -1
 DEFAULT_STR = ''
@@ -31,8 +31,8 @@ class TodoController:
     
 
     def display_all_todos(self):
-        msg = TodoService.display_all_todos()
-        msg_display(msg)
+        todos = TodoService.get_todos()
+        list_display(todos)
     
 
     def update(self, num, content):
