@@ -1,15 +1,3 @@
-## 실습코드 및 과제
+# Cloud MSA
 
-- ### [과제바로가기](homework/)
-
-  - [todoMgrSystem](homework/todoMgrSystem/)에서 vscode를 열고 main.py 실행
-
-  - [ProductMgrSystem](homework/ProductMgrSystem/)에서 vscode열고 main.py실행
-
-    - 파일경로를 상대경로로 설정하였음.
-
-    
-
-  
-
-  
+- Cloud msa에서 배운 내용을 저장하는 곳입니다.
